@@ -21,4 +21,18 @@ public class MoodAnalyserTest {
           String  mood = moodAnalyser.analyseMood();
         Assert.assertEquals("HAPPY", mood);
     }
+
+    @Test
+    public void whenMood_IsNull_ShouldReturn_CustomException_WithExceptionType() throws MoodAnalyserException {
+       MoodAnalyser moodAnalyser =new MoodAnalyser(null) ;
+        String mood = moodAnalyser.analyseMood();
+
+    }
+
+    @Test
+    public void whenMood_IsEmpty_ShouldReturn_CustomException_WithExceptionType() throws MoodAnalyserException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("");
+        String mood = moodAnalyser.analyseMood();
+    }
+
 }
