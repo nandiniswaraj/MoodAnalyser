@@ -21,6 +21,17 @@ public class MoodAnalyser {
             throw new MoodAnalyserException(MoodAnalyserException.exceptionType.ENTERED_NULL, "ENTERED_NULL");
         }
     }
+    public boolean equals(Object another){
+        if (this.message.equals(((MoodAnalyser)another).message))
+            return true;
+        return false;
+    }
+
+    public boolean equalsMethod_ForObject(Object another){
+        if (this == another)
+            return true;
+        return false;
+    }
 
 
 
