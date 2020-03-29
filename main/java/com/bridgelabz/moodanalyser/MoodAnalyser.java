@@ -1,6 +1,9 @@
-package com.bridgelabz.moodanalyser;
+package com.bridgelabz;
+
+import com.bridgelabz.moodanalyser.MoodAnalyserException;
 
 public class MoodAnalyser {
+
     private String message;
 
     public MoodAnalyser() {
@@ -21,6 +24,7 @@ public class MoodAnalyser {
             throw new MoodAnalyserException(MoodAnalyserException.exceptionType.ENTERED_NULL, "ENTERED_NULL");
         }
     }
+
     public boolean equals(Object another){
         if (this.message.equals(((MoodAnalyser)another).message))
             return true;
@@ -32,8 +36,5 @@ public class MoodAnalyser {
             return true;
         return false;
     }
-
-
-
 
 }
