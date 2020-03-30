@@ -56,6 +56,7 @@ public class MoodAnalyserTest {
         try {
             MoodAnalyser moodAnalyser= MoodAnalyserFactory.createMoodAnalyserObject("MoodAnalysers");
             Assert.assertEquals("MoodAnalysers", moodAnalyser);
+
         } catch (MoodAnalyserException e) {
             e.printStackTrace();
         }
@@ -69,4 +70,26 @@ public class MoodAnalyserTest {
             e.printStackTrace();
         }
     }
+        @Test
+        public void whenMood_IsHappy_ShouldReturn_Happy() {
+            try {
+                MoodAnalyser obj= MoodAnalyserReflector.createMoodAnalyserObject("Happy Mood");
+                MoodAnalyser mood= (MoodAnalyser) MoodAnalyserReflector.invokeMethod(obj, "analyseMoood");
+                Assert.assertEquals("Happy", mood);
+            } catch (MoodAnalyserException e) {
+                e.printStackTrace();
+            }
+        }
+
+         @Test
+         private void _IsIncorrectMethod_ShouldReturn_NoSuchMethodError() {
+             try {
+                 MoodAnalyser obj= MoodAnalyserReflector.createMoodAnalyserObject("Sad Mood");
+                 Object mood= MoodAnalyserReflector.invokeMethod(obj,"analyseMood");
+                 Assert.assertEquals("Happy", mood);
+             } catch (MoodAnalyserException e) {
+                 e.printStackTrace();
+             }
+
+         }
 }
