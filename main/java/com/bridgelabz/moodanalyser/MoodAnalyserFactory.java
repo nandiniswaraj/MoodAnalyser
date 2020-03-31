@@ -1,15 +1,12 @@
 package com.bridgelabz.moodanalyser;
-
-
 import com.bridgelabz.MoodAnalyser;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class MoodAnalyserFactory {
     public static MoodAnalyser createMoodAnalyserObject(String msg) throws MoodAnalyserException {
         try {
-            Class<?> moodAnalyserClass = Class.forName("com.corejava.MoodAnalyser");
+            Class<?> moodAnalyserClass = Class.forName("com.bridgelabz.MoodAnalyser");
             Constructor<?> moodConstructor = moodAnalyserClass.getConstructor(String.class);
             return (MoodAnalyser) moodConstructor.newInstance(msg);
         }
@@ -35,7 +32,7 @@ public class MoodAnalyserFactory {
             Class<?> moodAnalyserClass = Class.forName("com.corejava.MoodAnalyser");
             Constructor<?> moodConstructor = moodAnalyserClass.getConstructor(Integer.class);
             return (MoodAnalyser) moodConstructor.newInstance();
-        }
+         }
         catch (ClassNotFoundException e) {
             throw new MoodAnalyserException(MoodAnalyserException.exceptionType.NO_SUCH_CLASS, "NO_SUCH_CLASS_ERROR");
         }
