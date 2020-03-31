@@ -66,4 +66,19 @@ public class MoodAnalyserReflector {
         }
     }
 
+    public static void setFieldValue(Object obj, String fieldName, String fieldValue) throws MoodAnalyserException {
+        try {
+            Field field = obj.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            field.set(obj, fieldValue);
+        }
+        catch (NoSuchFieldException e) {
+            throw new MoodAnalyserException(MoodAnalyserException.exceptionType.NO_SUCH_FIELD, "NO_SUCH_FIELD");
+        }
+        catch (IllegalAccessException e) {
+            throw new MoodAnalyserException(MoodAnalyserException.exceptionType.NO_ACCESS, "NO_ACCESS");
+        }
     }
+
+
+}
