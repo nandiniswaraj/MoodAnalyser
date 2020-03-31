@@ -81,15 +81,17 @@ public class MoodAnalyserTest {
             }
         }
 
-         @Test
-         private void _IsIncorrectMethod_ShouldReturn_NoSuchMethodError() {
-             try {
-                 MoodAnalyser obj= MoodAnalyserReflector.createMoodAnalyserObject("Sad Mood");
-                 Object mood= MoodAnalyserReflector.invokeMethod(obj,"analyseMood");
-                 Assert.assertEquals("Happy", mood);
-             } catch (MoodAnalyserException e) {
-                 e.printStackTrace();
-             }
+    @Test
+    private void _IsIncorrectMethod_ShouldReturn_NoSuchMethodError() {
+        try {
+            MoodAnalyser obj= MoodAnalyserReflector.createMoodAnalyserObject("Sad Mood");
+            Object mood= MoodAnalyserReflector.invokeMethod(obj,"analyseMood");
+            Assert.assertEquals("Happy", mood);
+        } catch (MoodAnalyserException e) {
+            e.printStackTrace();
+        }
 
-         }
+    }
+
+
 }
