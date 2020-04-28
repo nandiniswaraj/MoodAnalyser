@@ -57,16 +57,16 @@ public class MoodAnalyserTest {
             MoodAnalyser moodAnalyser= MoodAnalyserFactory.createMoodAnalyserObject("com.bridgelabz.Mood");
          
         } catch (MoodAnalyserException e) {
-             Assert.assertEquals("NO_SUCH_CLASS_ERROR",e.getMessage());
+             Assert.assertEquals("NO_SUCH_CLASS_ERROR", e.getMessage());
         }
     }
     @Test
     public void whenMood_MethodIsNotAvailable_ShouldReturn_CustomException_WithNoSuchMethod() {
         try {
-            MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalyserObject("");
-            Assert.assertEquals("MoodAnalysis", moodAnalyser);
-        } catch (MoodAnalyserException e) {
-            e.printStackTrace();
+            MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalyserObject();
+            } catch (MoodAnalyserException e) {
+            Assert.assertEquals("NO_SUCH_METHOD_ERROR", e.getMessage());
+        
         }
     }
 }
