@@ -54,10 +54,10 @@ public class MoodAnalyserTest {
     @Test
     public void whenMood_ClassIsNotAvailable_ShouldReturn_CustomException_WithNoSuchClass() {
         try {
-            MoodAnalyser moodAnalyser= MoodAnalyserFactory.createMoodAnalyserObject("MoodAnalysers");
-            Assert.assertEquals("MoodAnalysers", moodAnalyser);
+            MoodAnalyser moodAnalyser= MoodAnalyserFactory.createMoodAnalyserObject("com.bridgelabz.Mood");
+         
         } catch (MoodAnalyserException e) {
-            e.printStackTrace();
+             Assert.assertEquals("NO_SUCH_CLASS_ERROR",e.getMessage());
         }
     }
     @Test
