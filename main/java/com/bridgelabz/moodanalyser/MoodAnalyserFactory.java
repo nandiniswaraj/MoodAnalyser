@@ -7,11 +7,11 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class MoodAnalyserFactory {
-    public static MoodAnalyser createMoodAnalyserObject(String msg) throws MoodAnalyserException {
+    public static MoodAnalyser createMoodAnalyserObject(String className) throws MoodAnalyserException {
         try {
-            Class<?> moodAnalyserClass = Class.forName("com.bridgelabz.MoodAnalyser");
+            Class<?> moodAnalyserClass = Class.forName(ClassName);
             Constructor<?> moodConstructor = moodAnalyserClass.getConstructor(String.class);
-            return (MoodAnalyser) moodConstructor.newInstance(msg);
+            return (MoodAnalyser) moodConstructor.newInstance();
         }
         catch (ClassNotFoundException e) {
             throw new MoodAnalyserException(MoodAnalyserException.exceptionType.NO_SUCH_CLASS, "NO_SUCH_CLASS_ERROR");
