@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 public class MoodAnalyserFactory {
     public static MoodAnalyser createMoodAnalyserObject(String msg) throws MoodAnalyserException {
         try {
-            Class<?> moodAnalyserClass = Class.forName("com.corejava.MoodAnalyser");
+            Class<?> moodAnalyserClass = Class.forName("com.bridgelabz.MoodAnalyser");
             Constructor<?> moodConstructor = moodAnalyserClass.getConstructor(String.class);
             return (MoodAnalyser) moodConstructor.newInstance(msg);
         }
@@ -32,7 +32,7 @@ public class MoodAnalyserFactory {
 
     public static MoodAnalyser createMoodAnalyserObject() throws MoodAnalyserException {
         try {
-            Class<?> moodAnalyserClass = Class.forName("com.corejava.MoodAnalyser");
+            Class<?> moodAnalyserClass = Class.forName("com.bridgelabz.MoodAnalyser");
             Constructor<?> moodConstructor = moodAnalyserClass.getConstructor(Integer.class);
             return (MoodAnalyser) moodConstructor.newInstance();
         }
