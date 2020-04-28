@@ -62,7 +62,7 @@ public class MoodAnalyserTest {
     }
 
     @Test
-    public void whenMood_ClassIsNotAvailable_ShouldReturn_CustomException_WithNoSuchMETHOD() {
+    public void whenMood_ClassIsNotAvailable_ShouldReturn_CustomException_WithNoSuchCLASS() {
         try {
             MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalyserObject();
         } catch (MoodAnalyserException e) {
