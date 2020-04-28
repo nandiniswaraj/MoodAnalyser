@@ -11,6 +11,6 @@ public class MoodAnalyser {
      public String analyseMood()  {
             if (message.contains("sad"))
                 return "SAD";
-            return "HAPPY";
+                return "HAPPY";
         }
 }
