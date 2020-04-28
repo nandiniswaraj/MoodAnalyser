@@ -9,7 +9,6 @@ public class MoodAnalyser {
     public MoodAnalyser(String message) {
         this.message = message;
     }
-
     public String analyseMood() throws MoodAnalyserException {
         try {
             if (message.length()<=0)
@@ -21,8 +20,4 @@ public class MoodAnalyser {
             throw new MoodAnalyserException(MoodAnalyserException.exceptionType.ENTERED_NULL, "ENTERED_NULL");
         }
     }
-
-
-
-
 }
