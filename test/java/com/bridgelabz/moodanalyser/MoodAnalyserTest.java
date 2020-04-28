@@ -52,16 +52,6 @@ public class MoodAnalyserTest {
     }
 
     @Test
-    public void whenMood_IsNull_ShouldReturn_CustomException_WithExceptionType() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        try {
-            String mood = moodAnalyser.analyseMood();
-        } catch (MoodAnalyserException e) {
-            Assert.assertEquals("ENTERED_NULL", e.getMessage());
-        }
-    }
-
-    @Test
     public void whenMood_IsEmpty_ShouldReturn_CustomException_WithExceptionType() {
         MoodAnalyser moodAnalyser = new MoodAnalyser("");
         try {
@@ -79,8 +69,6 @@ public class MoodAnalyserTest {
             Assert.assertEquals("NO_SUCH_CLASS", e.getMessage());
         }
     }
-
-
 }
 
 
